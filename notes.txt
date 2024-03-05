@@ -1,3 +1,4 @@
+1. 
 "df.iloc[df['Review string length'].idxmax()]['Review']"
 This part was a bit hard to understand.
 
@@ -10,5 +11,43 @@ df.iloc
 In this, iloc[..] is used to locate the row of the specified index
 
 now combining all these lines of code, we get the value of the row with the highest string count
+
+
+2. 
+"plt.figure(figsize=(10, 6))
+sns.histplot(df['Review string length'], bins=50, kde=False)
+plt.xlabel('Review string length')
+plt.title('Review string length distribution')
+plt.show()"
+
+for the first line, it just creates a new figure for the plot by specifying the width and the height: figsize=(width, length)
+
+for the second line,
+#histogram is the graphical representation of the distribution of data
+the second line is basically used to create a histograph for a particular data which in this case is for the Review string length
+in here we create a histogram for the plot using the data of the Review string length, with 50 bins(bars) and kde set to False (he KDE is a way to estimate the probability density function of the underlying distribution.
+If kde=True, a smooth curve will be overlaid on the histogram, providing an estimate of the probability density of the data.)
+
+
+
+
+
+KDE(Kernel Density Function)  #https://www.youtube.com/watch?v=x5zLaWT5KPs
+- Kernel Density Estimation is the estimation of an unknown PDF(Probability Density Function) given some data
+
+
+To use the deployed model
+
+
+import joblib
+
+loaded_clf = joblib.load('restaurant_review_model.pkl')
+X_new = cv.transform(["Enter the data here(review)"]).toarray()
+predictions = loaded_clf.predict(X_new)
+print("Predictions:", predictions)
+
+
+
+
 
 

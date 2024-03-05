@@ -1,0 +1,14 @@
+"df.iloc[df['Review string length'].idxmax()]['Review']"
+This part was a bit hard to understand.
+
+breaking down the code:
+
+df['Rewview string length'].idxmax()
+This is used to find the index of the maximum value in the column. The idexmax() returns the index corresponding to the max value specified in the column.
+
+df.iloc
+In this, iloc[..] is used to locate the row of the specified index
+
+now combining all these lines of code, we get the value of the row with the highest string count
+
+
